@@ -1,0 +1,4 @@
+WritableSlice<
+            ClassDescriptor, 
+            Map<List<KotlinType>, ClassDescriptor>> 
+            TYPECLASS_IMPLEMENTATIONS = Slices.createSimpleSlice();

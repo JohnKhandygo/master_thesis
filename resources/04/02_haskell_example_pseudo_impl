@@ -1,0 +1,14 @@
+-- class CanEq
+data CanEq a = CanEq {
+    eq  :: a -> a -> Bool,
+    neq :: a -> a -> Bool
+}
+
+-- instance CanEq Bool
+BoolCanEq = CanEq {
+    eq  = \x y -> x == y,
+    neq = \x y -> not (x == y)
+}
+
+-- memberOf :: CanEq t => t -> [t] -> Bool
+memberOf :: CanEq t -> t -> [t] -> Bool

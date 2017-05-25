@@ -1,0 +1,16 @@
+@TypeClass
+interface CanEq<T> {
+	fun  eq(x: T, y: T): Boolean
+	fun neq(x: T, y: T): Boolean = !eq(x, y)
+}
+
+object DoubleCanEq: CanEq<Double> {
+	override fun eq(x: Double, y: Double) = x == y
+}
+
+fun <T, @TypeClass I: CanEq<T>> memberOf(
+        x: T, 
+        xs: List<T>
+): Boolean {
+	return !xs.filter( {CanEq.eq(it, x)} ).isEmpty()
+}

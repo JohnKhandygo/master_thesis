@@ -1,0 +1,15 @@
+object Equality {
+  trait CanEq[T] {
+    def  eq(x: T, y: T): Boolean
+    def neq(x: T, y: T): Boolean
+  }
+  implicit object BoolCanEq extends CanEq[Boolean] {
+    def  eq(x: Boolean, y: Boolean): Boolean = x == y
+    def neq(x: Boolean, y: Boolean): Boolean = x != y
+  }
+}
+
+object EqualityTest {
+  import Equality.CanEq
+  def memberOf[T : CanEq](x: T, xs: vector[T]): Boolean
+}

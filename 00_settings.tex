@@ -1,0 +1,78 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% Настройка параметров документа
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Быть посвободнее при склеивании слов
+\sloppy
+
+% Настройка листингов
+\renewcommand{\lstlistingname}{Листинг}
+\lstdefinestyle{java}{
+  extendedchars={true},
+  inputencoding={utf8},
+  language={Java},
+  basicstyle={\ttfamily \scriptsize},
+  keywordstyle={\rmfamily \bfseries},
+  commentstyle={\rmfamily \itshape},
+  tabsize={2},
+  numbers={left},
+  frame={single},
+  showstringspaces={false},
+  breaklines={true},
+}
+\lstdefinestyle{haskell}{
+  extendedchars={true},
+  inputencoding={utf8},
+  language={Haskell},
+  basicstyle={\ttfamily \scriptsize},
+  keywordstyle={\rmfamily \bfseries},
+  commentstyle={\rmfamily \itshape},
+  tabsize={2},
+  numbers={left},
+  frame={single},
+  showstringspaces={false},
+  breaklines={true},
+}
+\lstdefinestyle{scala}{
+  extendedchars={true},
+  inputencoding={utf8},
+  language={Scala},
+  basicstyle={\ttfamily \scriptsize},
+  keywordstyle={\rmfamily \bfseries},
+  commentstyle={\rmfamily \itshape},
+  tabsize={2},
+  numbers={left},
+  frame={single},
+  showstringspaces={false},
+  breaklines={true},
+}
+\lstdefinestyle{kotlin}{
+  extendedchars={true},
+  inputencoding={utf8},
+  language={Kotlin},
+  basicstyle={\ttfamily \scriptsize},
+  keywordstyle={\rmfamily \bfseries},
+  commentstyle={\rmfamily \itshape},
+  tabsize={2},
+  numbers={left},
+  frame={single},
+  showstringspaces={false},
+  breaklines={true},
+}
+\input{listings_cyr_hack}
+\def\inline{
+    \lstinline[
+        extendedchars={true},
+        inputencoding={utf8},
+        basicstyle={\ttfamily \scriptsize},
+        keywordstyle={\rmfamily \bfseries},
+        commentstyle={\rmfamily \itshape},
+        showstringspaces={false}
+]}
+
+% Настройка стиля оглавления
+% \renewcommand{\tocchapterfont}{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

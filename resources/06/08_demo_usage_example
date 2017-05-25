@@ -1,0 +1,20 @@
+@TypeClass
+interface Monoid<T> {
+    val unit: T
+    fun add(x: T, y: T): T
+}
+
+object StringMonoid : Monoid<String> {
+    override val unit: String = ""
+    override fun add(x: String, y: String): String = x + y
+}
+
+object DoubleMonoid : Monoid<Double> {
+    override val unit: Double = 0.0
+    override fun add(x: Double, y: Double): Double = x + y
+}
+
+fun <T> sum(@TypeClassDictionary m: Monoid<T>, xs: List<T>): T {
+    return if (xs.isEmpty()) m.unit
+    else m.add(xs.first(), sum(xs.subList(1, xs.size)))
+}

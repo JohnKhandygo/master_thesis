@@ -1,0 +1,11 @@
+class CanEq a where
+    eq  :: a -> a -> Bool
+    neq :: a -> a -> Bool
+    neq x y = not (eq x y)
+
+instance CanEq Bool where
+    eq True True = True
+    eq False False = True
+    eq _ _  = False
+
+memberOf :: CanEq t => t -> [t] -> Bool
