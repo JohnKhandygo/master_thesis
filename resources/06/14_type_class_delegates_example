@@ -1,0 +1,10 @@
+@TypeClass
+interface C<T1, T2> {
+    fun f(t1: T1, t2: T2)
+}
+
+fun <T1, T2> f(
+    @TypeClassDictionary dictionary: C<T1, T2>, 
+    t1: T1, 
+    t2: T2
+) = dictionary.f(t1, t2)
