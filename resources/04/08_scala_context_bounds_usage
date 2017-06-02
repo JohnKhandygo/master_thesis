@@ -1,0 +1,1 @@
+def doFoo[T : CanFoo](t: T) = implicitly[CanFoo[T]].foo();

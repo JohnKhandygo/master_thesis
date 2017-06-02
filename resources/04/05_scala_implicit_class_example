@@ -1,0 +1,9 @@
+object Foos {
+    implicit class DoubleCanFoo(d: Double) {
+        def foo() = println("foo with " + d);
+    }
+}
+
+
+import Foos._
+3.14.foo();

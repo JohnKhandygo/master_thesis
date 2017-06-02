@@ -27,16 +27,20 @@
 
 \usepackage{cmap, mathtext, amsmath, amssymb, amsthm, amscd, amsfonts}
 
+\newcommand{\code}[1]{\lstinline[style=inline]{#1}}
+\newcommand{\smallcode}[1]{\lstinline[style=inline, basicstyle={\ttfamily \small}]{#1}}
+\newcommand{\cpp}[]{C{}\texttt{++}~}
+
 % \numberwithin{equation}{section}
 % \newtheorem{theorem}{Теорема}[section]
 % \newtheorem{lemma}{Лемма}[section]
 % \newtheorem{proposition}{Предложение}[section]
-\theoremstyle{definition}
-\theoremstyle{remark}
-\newtheorem{remark}{Замечание}[section]
+%\theoremstyle{definition}
+% \theoremstyle{remark}
+% \newtheorem{remark}{Замечание}[section]
 % \newtheorem{corollary}{Следствие}[section]
 % \newtheorem{example}{Пример}[section]
-\newtheorem{definition}{Определение}[chapter]
+%\newtheorem{definition}{Определение}[chapter]
 
 % Компактные списки
 \usepackage{mdwlist}
@@ -47,12 +51,6 @@
 % Листинги
 \usepackage{listings}
 
-% TODOs
-% \usepackage[%
-%   colorinlistoftodos,
-%   shadow
-% ]{todonotes}
-
 % Путь к каталогу со всеми рисунками
 \graphicspath{{fig/}}
 
@@ -61,9 +59,6 @@
 
 % Генератор текста
 \usepackage{blindtext}
-
-\newcommand{\code}[1]{\lstinline[style=inline]{#1}}
-\newcommand{\smallcode}[1]{\lstinline[style=inline, basicstyle={\ttfamily \small}]{#1}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -109,10 +104,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \input{02_introduction}
-\input{03_problem}
 \input{04_overview}
-\input{05_concept}
+\input{03_problem}
+%\input{05_concept}
 \input{06_implementation}
+\input{07_testing}
 %\input{conclusion}
 
 % \bibliography{thesis}

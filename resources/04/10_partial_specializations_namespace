@@ -1,0 +1,11 @@
+namespace N {
+    template<class T1, class T2> class Z { };
+}
+
+using N::Z;
+
+namespace N {
+    template<class T> class Z<T, T*> { };
+}
+
+Z<int, int*> z;

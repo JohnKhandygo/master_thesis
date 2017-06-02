@@ -8,9 +8,17 @@ object DoubleCanEq: CanEq<Double> {
 	override fun eq(x: Double, y: Double) = x == y
 }
 
-fun <T, @TypeClass I: CanEq<T>> memberOf(
+fun <T, @TypeClass I: CanEq<T>> memberOf1(
         x: T, 
         xs: List<T>
 ): Boolean {
 	return !xs.filter( {CanEq.eq(it, x)} ).isEmpty()
+}
+
+fun <T> memberOf2(
+        @TypeClassDictionary d: CanEq<T>
+        x: T, 
+        xs: List<T>
+): Boolean {
+	return !xs.filter( {d.eq(it, x)} ).isEmpty()
 }

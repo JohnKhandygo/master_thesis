@@ -1,0 +1,19 @@
+trait CanFoo[T] {
+    def foo();
+}
+
+object Foos {
+    implicit object DoubleCanFoo extends CanFoo[Double] {
+        override def foo() = println("double foo");
+    }
+    implicit object StringCanFoo extends CanFoo[String] {
+        override def foo() = println("string foo");
+    }
+
+}
+
+def doFoo[T](t: T)(implicit f: CanFoo[T]) = f.foo();
+
+import Foos._
+doFoo("bar")(StringCanFoo);
+doFoo(3.14);

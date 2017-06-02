@@ -4,7 +4,6 @@ interface CanEq<T> {
 	fun neq(x: T, y: T): Boolean = !eq(x, y)
 }
 
-@TypeClassInstance(typeClass=CanEq::class, member=Double::class)
 object DoubleCanEq: CanEq<Double> {
 	override fun eq(x: Double, y: Double) = x == y
 }

@@ -1,0 +1,28 @@
+template<class T>
+struct CanEq {
+	static bool  eq(T t1, T t2) {
+		return false;
+	}
+
+	static bool neq(T t1, T t2) {
+		return !CanEq<T>::eq(t1, t2);
+	}
+};
+
+template<>
+struct CanEq<bool> {
+	static bool eq(bool b1, bool b2) {
+		return b1 == b2;
+	}
+};
+
+template<class T>
+static bool memberOf(T t, std::list<T> l) {
+	std::list<T>::const_iterator it;
+	for (it = l.begin(); it != l.end(); ++it) {
+		if (CanEq<T>::eq(t, *it)) {
+			return true;
+		}
+	}
+	return false;
+}

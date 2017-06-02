@@ -1,0 +1,6 @@
+class DoubleCanFoo(d: Double) {
+    def foo() = println("foo with " + d);
+}
+
+implicit final def DoubleCanFoo(d: Double): DoubleCanFoo = 
+    new DoubleCanFoo(d)
