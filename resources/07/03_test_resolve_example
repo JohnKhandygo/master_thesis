@@ -1,0 +1,14 @@
+@TypeClass
+interface C<T>
+
+object A2Member : C<A2>
+object B2Member : C<B2>
+object A4Member : C<A4?>
+
+fun <T, @TypeClass D: C<in T>> test(t: T) {}
+
+fun testB1(b1: B1) = <caret>test<B1>(b1)  //nothing found
+fun testA2(a2: A2) = <caret>test<A2>(a2)  //found TC<in A2> = TC<A2>
+fun testA3(a3: A3) = <caret>test(a3)      //found TC<in A3> = TC<A2>
+fun testA4(a5: A5) = <caret>test(a5)      //found TC<in A4> = TC<A4?>
+fun testB3(b4: B4) = <caret>test<B3>(b4)  //found TC<in B3> = TC<B2>

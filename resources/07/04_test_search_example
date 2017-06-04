@@ -1,0 +1,18 @@
+@TypeClass
+interface C<T>
+
+fun <T, @TypeClass D: C<out T>> covariant() {}
+
+fun <T> withAnonymous(lambda: (Unit) -> Unit) {}
+
+fun <T, @TypeClass D1: C<T>,
+        @TypeClass D2: C<in T>,
+        @TypeClass D3: C<out T>> testAnonymous() {
+    withAnonymous<T> {
+        withAnonymous<T> {
+            withAnonymous<T> {
+                <caret>covariant<T>() //found C<in T> = 2nd dictionary
+            }
+        }
+    }
+}

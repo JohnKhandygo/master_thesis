@@ -11,54 +11,7 @@
 %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\input{00_preamble}
-
-\documentclass[%
-  a5paper,
-  subf,
-  href,
-  master,
-  dotsinheaders
-]{csse-fcs}
-
-\usepackage[T2A]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage[english,russian]{babel}
-
-\usepackage{cmap, mathtext, amsmath, amssymb, amsthm, amscd, amsfonts}
-
-\newcommand{\code}[1]{\lstinline[style=inline]{#1}}
-\newcommand{\smallcode}[1]{\lstinline[style=inline, basicstyle={\ttfamily \small}]{#1}}
-\newcommand{\cpp}[]{C{}\texttt{++}~}
-
-% \numberwithin{equation}{section}
-% \newtheorem{theorem}{Теорема}[section]
-% \newtheorem{lemma}{Лемма}[section]
-% \newtheorem{proposition}{Предложение}[section]
-%\theoremstyle{definition}
-% \theoremstyle{remark}
-% \newtheorem{remark}{Замечание}[section]
-% \newtheorem{corollary}{Следствие}[section]
-% \newtheorem{example}{Пример}[section]
-%\newtheorem{definition}{Определение}[chapter]
-
-% Компактные списки
-\usepackage{mdwlist}
-
-% Таблицы
-\usepackage{array}
-
-% Листинги
-\usepackage{listings}
-
-% Путь к каталогу со всеми рисунками
-\graphicspath{{fig/}}
-
-% Автоконвертер для EPS
-\usepackage{epstopdf}
-
-% Генератор текста
-\usepackage{blindtext}
+\input{preamble}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -109,13 +62,10 @@
 %\input{05_concept}
 \input{06_implementation}
 \input{07_testing}
-%\input{conclusion}
+\input{08_conclusion}
 
-% \bibliography{thesis}
-% \bibliographystyle{ugost2008}
-
-% \appendix
-% \input{appendix01}
+\bibliography{thesis}
+\bibliographystyle{ugost2008}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
