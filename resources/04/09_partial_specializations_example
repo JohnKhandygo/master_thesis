@@ -1,11 +1,11 @@
-template<class T, double D>
+template<class T1, int T2>
 class A {};
  
-template<class E, double D>
-class A<std::list<E>, D> {};
+template<class E, int T2>
+class A<std::list<E>, T2> {};
  
 template<class T>
-class A<T, 1.0> {};
+class A<T, 1> {};
 
 template<>
-class A<std::string, 3.14> {};
+class A<std::string, 3> {};

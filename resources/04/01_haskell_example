@@ -9,3 +9,4 @@ instance CanEq Bool where
     eq _ _  = False
 
 memberOf :: CanEq t => t -> [t] -> Bool
+memberOf x ys = not $ null $ filter (\y -> eq x y) ys

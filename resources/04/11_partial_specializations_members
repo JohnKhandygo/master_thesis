@@ -1,18 +1,18 @@
-template<class T, double D>
+template<class T1, int T2>
 struct A {
     void f();
 };
  
-template<class T, double D>
-void A<T, D>::f() {}
+template<class T1, int T2>
+void A<T1, T2>::f() {}
 
 template<class T>
-struct A<T, 3.14> {
+struct A<T, 3> {
     void g();
 };
  
 template<class T>
-void A<T, 3.14>::g() {}
+void A<T, 3>::g() {}
  
 template<>
-void A<char, 3.14>::h() {}
+void A<char, 3>::h() {}

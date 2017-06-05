@@ -1,14 +1,24 @@
 -- class CanEq
-data CanEq a = CanEq {
+data CanEqD a = CanEqDictionary {
     eq  :: a -> a -> Bool,
-    neq :: a -> a -> Bool
+    neq :: a -> a -> Bool,
 }
 
+eqBool :: Bool -> Bool -> Bool
+eqBool True True = True
+eqBool False False = True
+eqBool _ _  = False
+
+neqBool :: Bool -> Bool -> Bool
+neqBool x y = not (eqBool x y)
+
 -- instance CanEq Bool
-BoolCanEq = CanEq {
-    eq  = \x y -> x == y,
-    neq = \x y -> not (x == y)
+boolCanEq :: CanEqD Bool
+boolCanEq = CanEqDictionary {
+    eq  = eqBool,
+    neq = neqBool
 }
 
 -- memberOf :: CanEq t => t -> [t] -> Bool
-memberOf :: CanEq t -> t -> [t] -> Bool
+memberOf :: (CanEqD t) -> t -> [t] -> Bool
+memberOf d x ys = not $ null $ filter (\y -> eq d x y) 

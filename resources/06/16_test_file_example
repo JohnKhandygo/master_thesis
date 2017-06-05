@@ -1,7 +1,7 @@
 Resolved call:
 
-Candidate descriptor: fun <T> doStuff(_dictionary_0: TC<T>, t: T): Unit defined in test
-Resulting descriptor: fun <T> doStuff(_dictionary_0: TC<Double>, t: Double): Unit defined in test
+Candidate descriptor: fun <T> test(_dictionary_0: C<in T>, t: T): Unit defined in test
+Resulting descriptor: fun <T> test(_dictionary_0: C<in B3>, t: B3): Unit defined in test
 
 Explicit receiver kind = NO_EXPLICIT_RECEIVER
 Dispatch receiver = NO_RECEIVER
@@ -9,9 +9,9 @@ Extension receiver = NO_RECEIVER
 
 Value arguments mapping:
 
-SUCCESS  t : Double = d
+SUCCESS  t : B3 = b4
 
 Resolved value arguments mapping:
 
-SUCCESS  _dictionary_0 : TC<Double> = test.TCMember
-SUCCESS  t : Double = d
+SUCCESS  _dictionary_0 : C<in B3> = test.B2Member
+SUCCESS  t : B3 = b4
